@@ -72,4 +72,9 @@ public class Message {
         }
     }
 
+    public Object getId() {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
+    }
+
 }
