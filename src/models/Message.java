@@ -1,4 +1,5 @@
 package models;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,21 +8,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-public class Message {
+
+
     @Entity
     @NamedQueries({
         @NamedQuery(
-                name = "getAllMessages",
+                name = "getAllTask",
                 query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
                 ),
         @NamedQuery(
-                name = "getMessagesCount",
+                name = "getTaskCount",
                 query = "SELECT COUNT(m) FROM Message AS m"
                 )
     })
-    @Table(name = "messages")
-    public class Message {
+    @Table(name = "Task")
+    public class  Message {
         @Id
         @Column(name = "id")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -72,9 +75,3 @@ public class Message {
         }
     }
 
-    public Object getId() {
-        // TODO 自動生成されたメソッド・スタブ
-        return null;
-    }
-
-}

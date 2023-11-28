@@ -22,7 +22,7 @@ import utils.DBUtil;
 @WebServlet("/create")
 public class CreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -40,9 +40,9 @@ public class CreateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
 
-            Message m = new Message();
+            Message m = new  Message();
 
-           
+
 
             String content = request.getParameter("content");
             m.setContent(content);
@@ -58,7 +58,7 @@ public class CreateServlet extends HttpServlet {
 
                 // フォームに初期値を設定、さらにエラーメッセージを送る
                 request.setAttribute("_token", request.getSession().getId());
-                request.setAttribute("message", m);
+                request.setAttribute("Message", m);
                 request.setAttribute("errors", errors);
 
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/new.jsp");

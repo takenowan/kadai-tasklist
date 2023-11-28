@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<label for="content_msg">メッセージ</label><br />
+<label for="content_msg">タスク管理</label><br />
 <input type="text" name="content" id="content_msg" value="${message.content}" />
 <br /><br />
 
